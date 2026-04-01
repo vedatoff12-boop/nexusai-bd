@@ -739,7 +739,7 @@
       const d=await r.json();
       
       if(d.total_deposit&&d.total_deposit>0){userTotalDeposit=d.total_deposit;S.set('totalDep',String(d.total_deposit));updVIP();}
-      if(d.allowed){accessMode='full';S.set('accessGranted','1');}else{accessMode='limited';S.set('accessGranted','0');}
+      if(d.has_access){accessMode='full';S.set('accessGranted','1');}else{accessMode='limited';S.set('accessGranted','0');}
       chatTier=(userTotalDeposit>=2000)?2:1;
       updateChatHeader();}catch(e){}
     }
